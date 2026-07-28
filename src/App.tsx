@@ -14,18 +14,23 @@ function App() {
     document.documentElement.classList.toggle('dark', theme === 'dark')
   }, [theme])
 
-  const posts = useMemo(() => loadPosts(), [])
+const posts = useMemo(() => [...loadPosts()].reverse(), [])
 
   const filteredPosts = useMemo(() => {
-    const lowerSearch = search.trim().toLowerCase()
+  const lowerSearch = search.trim().toLowerCase()
 
-    return posts.filter((post) => {
-      return (
-        lowerSearch.length === 0 ||
-        [post.title, post.dateLabel, post.source].join(' ').toLowerCase().includes(lowerSearch)
-      )
-    })
-  }, [posts, search])
+  const matches = posts.filter((post) => {
+    return (
+      lowerSearch.length === 0 ||
+      [post.title, post.dateLabel, post.source]
+        .join(' ')
+        .toLowerCase()
+        .includes(lowerSearch)
+    )
+  })
+
+  return lowerSearch.length === 0 ? matches.slice(0, 3) : matches
+}, [posts, search])
 
   const selectedPost = useMemo(() => {
     if (filteredPosts.length === 0) {
@@ -79,7 +84,7 @@ function App() {
           {prevPost ? (
             <button type="button" className="entry-nav-link entry-nav-prev" onClick={() => goToPost(prevPost.slug)}>
               <span className="entry-nav-label">prev</span>
-              <span className="entry-nav-title">← {prevPost.title}</span>
+              <span className="entry-nav-title">{prevPost.title}</span>
             </button>
           ) : (
             <span />
@@ -87,7 +92,7 @@ function App() {
           {nextPost ? (
             <button type="button" className="entry-nav-link entry-nav-next" onClick={() => goToPost(nextPost.slug)}>
               <span className="entry-nav-label">next</span>
-              <span className="entry-nav-title">{nextPost.title} →</span>
+              <span className="entry-nav-title">{nextPost.title}</span>
             </button>
           ) : (
             <span />
