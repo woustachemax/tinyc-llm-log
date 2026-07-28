@@ -572,3 +572,11 @@ button {
     margin-left: 0;
   }
 }
+
+html {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

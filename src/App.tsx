@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { MarkdownViewer } from './components/MarkdownViewer'
@@ -9,6 +9,10 @@ function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const [search, setSearch] = useState('')
   const [selectedSlug, setSelectedSlug] = useState('')
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+  }, [theme])
 
   const posts = useMemo(() => loadPosts(), [])
 
