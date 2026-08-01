@@ -7,7 +7,7 @@ tags: C
 
 Day 1, always one of the toughest ones, huh!? Before diving headfirst into Day 1, I had a Day 0 to brainstorm the project. For the life of me, I couldn't make myself understand, in technical terms, what I was building: is it a mini-GPT like shown in Karpathy videos, or an LLM that could be moulded into an autocomplete? I just knew I was building something that required several days of dedication and resilience. 
 
-## The Problem
+## Problem
 
 Plainly, I'm building an inference engine, the thing that runs a trained model and spits out text. Except I'm writing that part myself in C instead of importing something. An AI model at inference time is mostly matrix multiplication and a couple of math functions, done over and over in a loop. Normally PyTorch handles that but here I'm hand writing that loop in C, badly at first probably (definitely).
 
