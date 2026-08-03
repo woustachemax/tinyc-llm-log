@@ -1,7 +1,7 @@
 ---
 title: Day 02, REALLY Re-learning C!
 date: 2026-08-01
-tags: C 
+tags: C
 ---
 
 ## Confession
@@ -36,7 +36,7 @@ This is the datatype for all my Python friends, we finally found something for u
 
 Stack is simple to understand as every function call pushes its local variables onto it, and after the function returns, it cleans itself, which makes it fast as hell but small and short-lived because the memory dies with it (RIP).
 
-Heap is what made me move away from Electronics Engineering, especially `malloc`. Stuff on the heap sticks until you explicitly `free` it. The downside is that it doesn't clean up after you, and forgetting to `free` leads to a leak. `free`.
+Heap is what made me move away from Electronics Engineering, especially `malloc`. Stuff on the heap sticks until you explicitly `free` it. The downside is that it doesn't clean up after you, and forgetting to `free` leads to a leak.
 
 ## EOD
 
