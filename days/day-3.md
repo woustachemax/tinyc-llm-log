@@ -1,7 +1,7 @@
 ---
 title: Day 03, C What I made using C!
 date: 2026-08-03
-tags: C
+tags: C, Linear Algebra
 ---
 
 ## Preface?

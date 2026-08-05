@@ -485,7 +485,7 @@ button {
   font-size: 0.9rem;
 }
 
-.markdown-content :not(pre) > code {
+.markdown-content :not(pre)>code {
   padding: 0.2rem 0.4rem;
   border-radius: 6px;
   background: var(--accent-soft);
@@ -579,4 +579,27 @@ html {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.devlog-page {
+  position: relative;
+  border: 1.5px dashed #a9713f;
+}
+
+.devlog-page::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  width: 8px;
+  background-image: radial-gradient(circle, #d9a866 2px, transparent 2.2px);
+  background-size: 8px 22px;
+  background-repeat: repeat-y;
+}
+
+.devlog-page .viewer-heading,
+.devlog-page .viewer-meta,
+.devlog-page .markdown-content {
+  padding-left: 1.5rem;
 }
